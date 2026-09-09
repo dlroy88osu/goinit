@@ -141,10 +141,6 @@ func main() {
         panic(err)
     }
 
-	if err := os.WriteFile("./src/utils.go", []byte(""), 0755); err != nil {
-		panic(err)
-	}
-
 	if (os.Getenv("TERM_PROGRAM") != "vscode" || os.Getenv("VSCODE_RESOLVING_ENVIRONMENT") != "") {
         execCmd = exec.Command("code", ".")
         if err := execCmd.Run(); err != nil {
